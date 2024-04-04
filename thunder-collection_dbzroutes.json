@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "dbzroutes",
+    "dateExported": "2024-04-04T21:21:19.172Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f4b6a39d-4bcd-4033-9058-92461ef62fa5",
+            "colId": "3f9a9833-fd58-4b3a-a08f-7eaf2967f99f",
+            "containerId": "",
+            "name": "getConnector",
+            "url": "http://localhost:8083/connectors",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-04T19:29:18.996Z",
+            "modified": "2024-04-04T19:29:18.996Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1af2c8d6-a3d8-40f7-8c6e-767b648438d1",
+            "colId": "3f9a9833-fd58-4b3a-a08f-7eaf2967f99f",
+            "containerId": "",
+            "name": "createConnector",
+            "url": "http://localhost:8083/connectors",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-04T19:29:31.869Z",
+            "modified": "2024-04-04T19:29:31.869Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"name\": \"source-transactions-connector\",\r\n\"config\": {\r\n\"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\r\n\"tasks.max\": \"1\",\r\n\"database.hostname\": \"postgres\",\r\n\"database.port\": \"5432\",\r\n\"database.user\": \"docker\",\r\n\"database.password\": \"docker\",\r\n\"database.dbname\": \"debezium_master\",\r\n\"plugin.name\": \"pgoutput\",\r\n\"database.server.name\": \"postgres\",\r\n\"key.converter.schemas.enable\":\r\n\"false\",\r\n\"value.converter.schemas.enable\": \"false\",\r\n\"transforms\": \"unwrap\",\r\n\"transforms.unwrap.type\": \"io.debezium.transforms.ExtractNewRecordState\",\r\n\"key.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n\"value.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n\"table.include.list\": \"public.student\",\r\n\"slot.name\": \"deb_student_transaction_slot\"\r\n  \r\n}\r\n  \r\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
