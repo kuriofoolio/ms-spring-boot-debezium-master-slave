@@ -44,7 +44,8 @@ To install and set up the project, follow these steps:
 
 5. Run the application.
 
-6. For more detailed instructions, refer to [Debezium Configuration](docs/dbz_instructions.pdf)
+6. For more detailed instructions, refer to [Debezium Configuration](
+https://safaricom.atlassian.net/wiki/spaces/IPE/pages/3102998535/Debezium+Configuration)
 
 
 ## Usage
