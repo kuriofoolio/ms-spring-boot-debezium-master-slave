@@ -10,8 +10,6 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=debezium_master
-    # depends_on:
-    #   - db
     
   pgadmin:
     image: dpage/pgadmin4
@@ -96,16 +94,6 @@ services:
 #   command: -Dpidfile.path=/dev/null
 
 
-  # db:
-  
-  #   image: mysql:latest
-  #   ports:
-  #     - 3306:3306
-  #   volumes:
-  #     - ./db:/var/lib/mysql
-  #   environment:
-  #     - MYSQL_ROOT_PASSWORD=your_password
-  #     - MYSQL_DATABASE=your_database
 
 
   # docker-compose up -d
