@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "0d9242ad-a5c1-4bd3-8be5-461af1902c5b",
+		"name": "ms-spring-boot-debezium",
+		"description": "This collection contains routes for interacting with a Debezium connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24452708"
+	},
+	"item": [
+		{
+			"name": "getConnector",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createConnector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"<CONNECTOR NAME>\",\r\n    \"config\": {\r\n        \"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\r\n        \"tasks.max\": \"1\",\r\n        \"database.hostname\": \"postgres\",\r\n        \"database.port\": \"5432\",\r\n        \"database.user\": \"<DB USER>\",\r\n        \"database.password\": \"<DB PASS>\",\r\n        \"database.dbname\": \"<DB NAME>\",\r\n        \"plugin.name\": \"pgoutput\",\r\n        \"database.server.name\": \"postgres\",\r\n        \"key.converter.schemas.enable\": \"false\",\r\n        \"value.converter.schemas.enable\": \"false\",\r\n        \"transforms\": \"unwrap\",\r\n        \"transforms.unwrap.type\": \"io.debezium.transforms.ExtractNewRecordState\",\r\n        \"key.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n        \"value.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n        \"table.include.list\": \"<TABLE NAME>\",\r\n        \"slot.name\": \"<SLOT NAME>\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

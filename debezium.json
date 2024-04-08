@@ -1,25 +1,22 @@
 {
   "name": "source-transactions-connector",
-"config": {
-"connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-"tasks.max": "1",
-"database.hostname": "postgres",
-"database.port": "5432",
-"database.user": "docker",
-"database.password": "docker",
-"database.dbname": "debezium_master",
-"plugin.name": "pgoutput",
-"database.server.name": "postgres",
-"key.converter.schemas.enable":
-"false",
-"value.converter.schemas.enable": "false",
-"transforms": "unwrap",
-"transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
-"key.converter": "org.apache.kafka.connect.json.JsonConverter",
-"value.converter": "org.apache.kafka.connect.json.JsonConverter",
-"table.include.list": "public.student",
-"slot.name": "deb_student_transaction_slot"
-  
-}
-  
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "docker",
+    "database.password": "docker",
+    "database.dbname": "debezium_master",
+    "plugin.name": "pgoutput",
+    "database.server.name": "postgres",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "table.include.list": "public.student",
+    "slot.name": "deb_student_transaction_slot"
+  }
 }
